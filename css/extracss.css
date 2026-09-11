@@ -1,0 +1,418 @@
+/* ============================================================
+   DEKENTJE — EXTRA CSS (WordPress / Divi)
+   Afgestemd op STYLEGUIDE.md. Selectors zijn ongewijzigd,
+   alleen kleuren, lettertypes en vormen zijn aangepast.
+   ============================================================ */
+
+/* ============================================================
+   FONTS — pas de paden aan naar de upload-locatie in WordPress
+   ============================================================ */
+@font-face {
+  font-family: 'Built Titling';
+  src: url('/wp-content/uploads/fonts/built titling rg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Built Titling';
+  src: url('/wp-content/uploads/fonts/built titling bd.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/wp-content/uploads/fonts/CircularStd-Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/wp-content/uploads/fonts/CircularStd-BookItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/wp-content/uploads/fonts/CircularStd-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/wp-content/uploads/fonts/CircularStd-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   CUSTOM PROPERTIES (identiek aan style.css)
+   ============================================================ */
+:root {
+  --clr-heading:  #606556;
+  --clr-accent:   #af1c23;
+  --clr-text:     #2c2c30;
+  --clr-bg:       #fdfdfd;
+  --clr-panel:    #f3f3f3;
+  --clr-sale:     #ab552b;
+
+  --ff-heading:   'Built Titling', Georgia, serif;
+  --ff-body:      'Circular Std', system-ui, sans-serif;
+
+  --ease:         0.25s ease;
+}
+
+/* ============================================================
+   BASIS — typografie en knoppen volgens merkgids
+   ============================================================ */
+body,
+#et-boc .et-l .et_pb_module,
+.et_pb_text,
+.et_pb_menu,
+.woocommerce {
+  font-family: var(--ff-body);
+  color: var(--clr-text);
+}
+
+h1, h2, h3, h4, h5, h6,
+.et_pb_module_header,
+.woocommerce div.product .product_title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  font-family: var(--ff-heading) !important;
+  font-weight: 400;
+  color: var(--clr-heading);
+  letter-spacing: 0.03em;
+  line-height: 1.12;
+}
+
+/* knoppen: recht, bold, ruime letter-spacing */
+.et_pb_button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit,
+.woocommerce .single_add_to_cart_button {
+  font-family: var(--ff-body) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  border-radius: 0 !important;
+  background-color: var(--clr-heading) !important;
+  color: var(--clr-bg) !important;
+  border: none !important;
+  transition: background-color var(--ease), color var(--ease) !important;
+}
+.et_pb_button:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce .single_add_to_cart_button:hover {
+  background-color: var(--clr-text) !important;
+  color: var(--clr-bg) !important;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.dvmm_mad_menu_0_tb_header .dvmm_logo__wrap {
+  flex: none !important;
+}
+.et_pb_row_1_tb_header {
+  width: 100% !important;
+}
+header.et-l.et-l--header {
+  z-index: 99999;
+  position: relative;
+  background-color: var(--clr-bg);
+}
+
+/* ============================================================
+   SHOP / PRODUCTKAARTEN
+   ============================================================ */
+/* rechte hoeken per merkgids */
+.et_shop_image > img {
+  border-radius: 0;
+}
+.ajax_add_to_cart {
+  display: none !important;
+}
+/* sale-label in sale-kleur */
+.wpt-image-card-slide span.onsale {
+  background-color: var(--clr-sale) !important;
+  color: var(--clr-bg) !important;
+  border-radius: 0 !important;
+  font-family: var(--ff-body);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+/* filter-items op panelkleur */
+.et-db #et-boc .et-l .et_pb_de_mach_filter_posts_0_tb_body .divi-filter-item {
+  background-color: var(--clr-panel) !important;
+  border-radius: 0 !important;
+}
+
+.wpt-image-card-image-wrapper {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+/* ============================================================
+   SOCIAL ICONS
+   ============================================================ */
+.et-social-facebook a.icon:before {
+  content: "\f39e";
+  font-family: FontAwesome !important;
+}
+.et-social-instagram a.icon:before {
+  content: "\f16d";
+  font-family: FontAwesome !important;
+}
+.et-social-icon a.icon:hover:before {
+  color: var(--clr-accent);
+}
+
+.restore-item {
+  color: var(--clr-accent) !important;
+  font-weight: 700;
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.et_pb_fullwidth_menu > div.et_pb_row.clearfix {
+  width: 100%;
+}
+.et-db #et-boc .et-l .et_pb_fullwidth_section > .et_pb_module:not(.et_pb_post_content):not(.et_pb_fullwidth_post_content) .et_pb_row {
+  width: 100%;
+}
+.lwp-vertical-menu nav ul li {
+  width: 100%;
+  display: block;
+}
+.fifty-fifty .image-column .et_pb_image_wrap {
+  display: flex;
+}
+.fifty-fifty .image-column .et_pb_image_wrap img {
+  object-fit: cover;
+  object-position: center;
+  flex-grow: 1;
+}
+@media (min-width: 1200px) {
+  .align-row-right-wide {
+    margin-left: auto;
+  }
+}
+.dipl_single_woo_product_add_to_cart {
+  max-width: 250px;
+}
+
+/* ============================================================
+   USP BULLET POINTS
+   ============================================================ */
+.custom_bullets_usp ul li {
+  padding-left: 30px;
+  list-style: none;
+  margin-bottom: 10px;
+  font-family: var(--ff-body);
+  color: var(--clr-text);
+}
+
+.custom_bullets_usp ul li::before {
+  content: '';
+  display: inline-block;
+  color: var(--clr-heading);
+  margin-right: 7px;
+  margin-left: -30px;
+  padding-right: 5px;
+  font-family: 'ETmodules';
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+.custom_bullets_usp--check ul li::before {
+  content: '\4e';
+}
+
+/* ============================================================
+   MEGA MENU
+   ============================================================ */
+.et_pb_menu li.mega-menu ul {
+  padding: 10px 0 !important;
+  background-color: var(--clr-bg);
+  border-top: 2px solid var(--clr-heading);
+}
+#top-menu li.mega-menu > ul > li {
+  width: 25%;
+}
+#top-menu li.mega-menu > ul > li:nth-child(-n+2) {
+  width: 20%;
+}
+#top-menu li.mega-menu > ul > li:nth-last-child(-n+2) {
+  width: 30%;
+}
+
+/* ============================================================
+   COLOR SWATCHES — vierkant per merkgids (rechte hoeken)
+   ============================================================ */
+.bapf_sfilter .bapf_clr_span.h2em,
+.bapf_sfilter .bapf_img_span.h2em {
+  border-radius: 0;
+  border: 2px solid var(--clr-panel);
+  transition: border-color var(--ease);
+}
+.bapf_sfilter .bapf_clr_span.h2em:hover,
+.bapf_sfilter .bapf_img_span.h2em:hover {
+  border-color: var(--clr-heading);
+}
+
+.color-swatches {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* ruimte tussen swatches */
+}
+.color-swatch {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--clr-panel);
+  border-radius: 0;
+  transition: border-color var(--ease);
+}
+.color-swatch:hover {
+  border-color: var(--clr-heading);
+}
+
+/* ============================================================
+   WOOCOMMERCE — aantal-veld
+   ============================================================ */
+.woocommerce div.product form.cart div.quantity,
+.woocommerce-page div.product form.cart div.quantity,
+.woocommerce #content div.product form.cart div.quantity,
+.woocommerce-page #content div.product form.cart div.quantity {
+  margin: 0 5px 0 0 !important;
+}
+.woocommerce div.product form.cart div.quantity .qty {
+  border: 2px solid var(--clr-heading);
+  border-radius: 0;
+  font-family: var(--ff-body);
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+}
+
+/* ============================================================
+   VERTICAL MENU (pa-vertical-menu)
+   ============================================================ */
+/* verwijder standaard 11px padding aan weerszijden van list items */
+.pa-vertical-menu .et-menu > li {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+/* menu-items volle breedte met ruimte ertussen */
+.pa-vertical-menu .et_pb_menu__menu nav ul li {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+}
+/* stijl van de menu-items */
+.pa-vertical-menu .et_pb_menu__menu nav ul li a {
+  padding: 5px !important;
+  font-family: var(--ff-body);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--clr-text);
+  border-radius: 0;
+  transition: background-color var(--ease), color var(--ease);
+}
+/* hover-stijl */
+.pa-vertical-menu .et_pb_menu__menu nav ul li a:hover {
+  opacity: 1 !important;
+  color: var(--clr-bg);
+  background-color: var(--clr-heading);
+}
+/* actief menu-item */
+.pa-vertical-menu .et_pb_menu__menu nav ul li.current-menu-item a {
+  opacity: 1 !important;
+  color: var(--clr-bg);
+  background-color: var(--clr-heading);
+}
+/* pijl-icoon bij sub-submenu's */
+.pa-vertical-menu .et_pb_menu__menu .menu-item-has-children .menu-item-has-children > a:first-child:after {
+  padding: 0px !important;
+  right: 0px !important;
+}
+/* submenu direct rechts van het menu-item in plaats van eronder */
+.pa-vertical-menu .et_pb_menu__menu nav ul li ul {
+  top: 0 !important;
+  background-color: var(--clr-bg);
+  border-left: 2px solid var(--clr-heading);
+}
+/* submenu rechts uitlijnen */
+.pa-vertical-menu .et_pb_menu__menu nav li ul {
+  left: 100% !important;
+}
+/* icoon bij hover */
+.pa-vertical-menu ul li a:hover:before {
+  margin-left: 7px;
+  color: var(--clr-bg) !important;
+  transition: all .75s ease;
+}
+/* icoon bij actief item */
+.pa-vertical-menu ul li.current-menu-item a:before {
+  margin-left: 7px;
+  color: var(--clr-bg) !important;
+}
+@media (max-width: 980px) {
+  /* mobiel menu altijd open op alle apparaten */
+  .et-db #et-boc .et-l .pa-vertical-menu .et_pb_menu__menu {
+    display: flex;
+  }
+  /* hamburger verbergen */
+  .et-db #et-boc .et-l .pa-vertical-menu .et_mobile_nav_menu {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   FULL-HEIGHT IMAGE COLUMN
+   ============================================================ */
+/* hoogte van de image-module */
+.pa-full-height-image-column {
+  height: 100%;
+}
+/* hoogte van de image-container */
+.pa-full-height-image-column .et_pb_image_wrap {
+  height: 100%;
+}
+/* hoogte en fit van de afbeelding zelf */
+.pa-full-height-image-column img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* ============================================================
+   TITELS — mega-menu subcategorie / h2-stijl
+   ============================================================ */
+.mega-menu-subcategory-title,
+.h2-style-title {
+  font-family: var(--ff-heading);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  color: var(--clr-heading);
+  padding-bottom: 10px;
+  line-height: 1.12;
+}
